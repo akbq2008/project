@@ -1,0 +1,39 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+*, :after, :before {
+    box-sizing: border-box;
+}
+html{-webkit-text-size-adjust:none;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0px;padding:0px;}
+html{background:#FFFFFF}
+body{font-size:12px; text-align:left; background:#FFFFFF; }
+table,input,textarea,select{font-size:12px;}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal} 
+a{outline:none;text-decoration:none;color: #666;}
+a:hover{text-decoration:none;}
+ul,ol{list-style:none}
+fieldset,img{border:none}
+table{border-collapse:collapse;}
+textarea{resize:none;}
+img{border:0;vertical-align: bottom;}
+em,i{ font-style:normal;}
+address,cite,dfn,em,var{font-style:normal;}
+article,aside,dialog,footer,header,section,footer,nav,figure{display:block;}/*html5 reset IE*/
+.clearfix{zoom:1;}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:"\20";clear:both;height:0;}
+* html .clearfix{zoom:1;}/* IE6 */
+:first-child+html .clearfix{zoom:1;}/* IE7 */
+.clearfix{zoom:1;}/* IE6/7 */
+:focus{-moz-outline-style:none;}/* for Firefox */
+.clear{clear:both; overflow:hidden; width:0px; height:0px; line-height:0; font-size:0px;}
+/* end of reset */
+.clear, .clr {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+}

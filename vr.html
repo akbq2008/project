@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+	</head>
+	<style>
+		#viewport {
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+			width: 100%;
+			overflow: hidden;
+		}
+		
+		#viewport .VR_xy {
+			display: block;
+			width: 57px;
+			height: 76px;
+			position: absolute;
+			background: url(images/VR_xy.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		#viewport .VR_xy span {
+			display: block;
+			width: 33px;
+			color: #295bea;
+			font-weight: bold;
+			font-size: 16px;
+			margin: 11px auto 0;
+			line-height: 17px;
+		}
+		
+		#viewport .VR_xy1 {
+			left: 34%;
+			top: 19%;
+		}
+		
+		#viewport .VR_xy2 {
+			left: 39%;
+			top: 61%
+		}
+		
+		#viewport .VR_xy3 {
+			left: 53%;
+			top: 13%;
+		}
+		
+		#viewport .VR_xy4 {
+			left: 60%;
+			top: 53%;
+		}
+		
+		#viewport .VR_xy5 {
+			left: 80%;
+			top: 42%;
+		}
+		
+		#viewport .VR_xy6 {
+			left: 75%;
+			top: 11%;
+		}
+		
+		#viewport .VR_xy7 {
+			left: 36%;
+			top: 39%;
+		}
+		
+		#viewport .VR_xy8 {
+			left: 7%;
+			top: 28%;
+		}
+		
+		#viewport .VR_xy9 {
+			left: 7%;
+			top: 75%;
+		}
+		
+		#viewport .VR_xy10 {
+			left: 56%;
+			top: 32%;
+		}
+	</style>
+
+	<body>
+		<div id="viewport">
+			<div style="background: url(images/VR.jpg); width: 1300px; height: 751px;position: relative;background-size: 1300px 751px;">
+				<a class="VR_xy VR_xy1" href="plugin/mobile-commerce/index.html" class="hotscenes-list-ico">
+					<span>移动商务</span>
+				</a>
+				<a class="VR_xy VR_xy2" href="plugin/media-class/index.html" class="hotscenes-list-ico">
+					<span>智慧教室</span>
+				</a>
+				<a class="VR_xy VR_xy3" href="plugin/window-service/index.html" class="hotscenes-list-ico">
+					<span>窗口服务</span>
+				</a>
+				<a class="VR_xy VR_xy4" href="plugin/catering-service/index.html" class="hotscenes-list-ico">
+					<span>餐饮服务</span>
+				</a>
+				<a class="VR_xy VR_xy5" href="plugin/staff-dorm/index.html" class="hotscenes-list-ico">
+					<span>员工宿舍</span>
+				</a>
+				<a class="VR_xy VR_xy6" href="plugin/security-monitor/index.html" class="hotscenes-list-ico">
+					<span>安防监控</span>
+				</a>
+				<a class="VR_xy VR_xy7" href="plugin/data-room/index.html" class="hotscenes-list-ico">
+					<span>数据机房</span>
+				</a>
+				<a class="VR_xy VR_xy8" href="plugin/business-office/index.html" class="hotscenes-list-ico">
+					<span>商务办公</span>
+				</a>
+				<a class="VR_xy VR_xy9" href="plugin/smart-meeting/index.html" class="hotscenes-list-ico">
+					<span>智能会议</span>
+				</a>
+				<a class="VR_xy VR_xy10" href="plugin/retail-store/index.html" class="hotscenes-list-ico">
+					<span>零售门店</span>
+				</a>
+			</div>
+		</div>
+		<!--VR按钮-->
+		<a href="catering-service/index.html" class="VR_bottom"></a>
+		<!--采购清单按钮-->
+		<div class="shop_menu"></div>
+		<!--采购清单-->
+		<div class="shopping_cart">
+			<div class="shop_menu_hide"></div>
+			<div class="shopping_cart_content">
+				<div class="shopping_cart_header">
+					<span class="shopping_cart_header_tit">采购清单</span>
+					<div class="shopping_cart_tab">
+						<span class="shopping_cart_tab_active" data-select="0">场景</span>
+						<span data-select="1">综合</span>
+					</div>
+				</div>
+				<div class="shopping_cart_scenes">
+					<ul class="clearfix">
+						<li class="shopping_cart_curr">商务办公</li>
+						<li>智能会议</li>
+						<li>移动商务</li>
+						<li>数据机房</li>
+						<li>智慧教室</li>
+					</ul>
+				</div>
+
+				<div class="shopping_cart_main">
+					<!--商务办公-->
+					<div class="shop-group-item" style="display: block">
+						<ul>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+									<div class="del">删除</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+									<div class="del">删除</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+									<div class="del">删除</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+									<div class="del">删除</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+									<div class="del">删除</div>
+								</div>
+							</li>
+						</ul>
+						<div class="item-payment-bar">
+							<div class="all-checkbox">
+								<input type="checkbox" class="check goods-check allCheck">
+								<span>全选</span>
+								<span class="all-delete">删除选中商品</span>
+							</div>
+							<div class="shopPrice">场景总价：<span>￥</span><span class="shop-total-amount ShopTotal">0.00</span></div>
+							<div class="item-payment-prompt">以上价格为京东前台实时价，不作为结算依据。仅供参考。</div>
+						</div>
+					</div>
+					<!--智能会议-->
+					<div class="shop-group-item" style="display: none">
+						<ul>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="item-payment-bar">
+							<div class="all-checkbox">
+								<input type="checkbox" class="check goods-check allCheck">
+								<span>全选</span>
+								<span class="all-delete">删除选中商品</span>
+							</div>
+							<div class="shopPrice">场景总价：<span>￥</span><span class="shop-total-amount ShopTotal">0.00</span></div>
+							<div class="item-payment-prompt">以上价格为京东前台实时价，不作为结算依据。仅供参考。</div>
+						</div>
+					</div>
+					<!--移动商务-->
+					<div class="shop-group-item" style="display: none">
+						<ul>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="item-payment-bar">
+							<div class="all-checkbox">
+								<input type="checkbox" class="check goods-check allCheck">
+								<span>全选</span>
+								<span class="all-delete">删除选中商品</span>
+							</div>
+							<div class="shopPrice">场景总价：<span>￥</span><span class="shop-total-amount ShopTotal">0.00</span></div>
+							<div class="item-payment-prompt">以上价格为京东前台实时价，不作为结算依据。仅供参考。</div>
+						</div>
+					</div>
+					<!--数据机房-->
+					<div class="shop-group-item" style="display: none">
+						<ul>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="item-payment-bar">
+							<div class="all-checkbox">
+								<input type="checkbox" class="check goods-check allCheck">
+								<span>全选</span>
+								<span class="all-delete">删除选中商品</span>
+							</div>
+							<div class="shopPrice">场景总价：<span>￥</span><span class="shop-total-amount ShopTotal">0.00</span></div>
+							<div class="item-payment-prompt">以上价格为京东前台实时价，不作为结算依据。仅供参考。</div>
+						</div>
+					</div>
+					<!--智慧教室-->
+					<div class="shop-group-item" style="display: none">
+						<ul>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="shop-info">
+									<input type="checkbox" class="check goods-check goodsCheck">
+									<div class="shop-info-img">
+										<a href="#"><img src="images/macbook.png" /></a>
+									</div>
+									<div class="shop-info-text">
+										<div class="shop-tit">戴尔DELL灵越燃R1605S 14.0英寸轻薄窄边框笔记本电脑银笔记本电脑银</div>
+										<div class="shop-brief">一年质保 商品编号:111821321323213</div>
+										<div class="shop-price">
+											<div class="shop-pices">￥<span class="price">100.00</span></div>
+											<div class="shop-arithmetic">
+												<a href="javascript:;" class="minus">-</a>
+												<span class="num">1</span>
+												<a href="javascript:;" class="plus">+</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="item-payment-bar">
+							<div class="all-checkbox">
+								<input type="checkbox" class="check goods-check allCheck">
+								<span>全选</span>
+								<span class="all-delete">删除选中商品</span>
+							</div>
+							<div class="shopPrice">场景总价：<span>￥</span><span class="shop-total-amount ShopTotal">0.00</span></div>
+							<div class="item-payment-prompt">以上价格为京东前台实时价，不作为结算依据。仅供参考。</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="payment-bar">
+					<div class="shop-total">总价：<span class="total">￥</span><span class="total" id="AllTotal">0.00</span>
+						<div class="all-num">(共<span class="shop-allnum">0</span>件)</div>
+					</div>
+					<a href="#" class="settlement">加入购物车(<span class="shop-allnum">0</span>)</a>
+				</div>
+
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript">
+			! function() {
+				function a() {
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px"
+				}
+				var b = null;
+				window.addEventListener("resize", function() {
+					clearTimeout(b), b = setTimeout(a, 300)
+				}, !1), a()
+			}(window);
+			$(function() {
+				$("html").css("height", "100%");
+				$("body").css("height", "100%");
+				var bh = $("body").height();
+				$("#viewport").css("height", bh);
+				$('#viewport').porthole({
+					start: [334, 97],
+					callback: function() {
+						console.log('loaded');
+					}
+				});
+			});
+		</script>
+		<script src="js/main.js"></script>
+		<script src="js/jquery.porthole.js"></script>
+	</body>
+
+</html>

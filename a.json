@@ -1,0 +1,112 @@
+{
+    "result": {
+        "orderInfoList": [
+            {
+            	"scene": "1",
+                "picUrl":"jfs/t16351/130/1933158340/110666/e4a9898/5a6eb2b6N705b4b71.jpg",
+                "name": "戴尔(DELL)成就商用台式电脑整机(i5-6400 4G 1T WIFI 蓝牙 三年上门 硬盘保留 Win10)19.5英寸",
+                "wserve": "1年质保",
+                "skuId": "4432452",
+                "num": 1,
+                "url":"http://item.jd.com/4432452.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "2",
+                "picUrl":"jfs/t13300/351/1428037091/138509/d1d7d9c3/5a1fb9aeN457da274.jpg",
+                "name": "爱普生（EPSON）EB-C1020XN 绿色防尘教育工程型投影仪 (3500流明 低噪音 ) 免费上门安装",
+                "wserve": "2年质保",
+                "skuId": "4039365",
+                "num": 2,
+                "url":"http://item.jd.com/4039365.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "3",
+                "picUrl":"jfs/t10999/359/325880753/182668/1fe765f1/59ed806cNd4c9b2a7.jpg",
+                "name": "爱普生（EPSON）EB-C1020XN 绿色防尘教育工程型投影仪 (3500流明 低噪音 ) 免费上门安装",
+                "wserve": "3年质保",
+                "skuId": "4972956",
+                "num": 3,
+                "url":"http://item.jd.com/4972956.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "4",
+                "picUrl":"jfs/t5941/351/7926707248/165639/7c09baa7/59828bbbNb448f6c2.jpg",
+                "name": "联想（ThinkServer）RD350 1U机架服务器 (2xE5-2603v4/2x8GB DDR4/2x2TB SATA/R110i/DVD/450W）",
+                "wserve": "4年质保",
+                "skuId": "4656267",
+                "num": 4,
+                "url":"http://item.jd.com/4656267.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "5",
+                "picUrl":"jfs/t9097/364/2339858970/259730/38c02a1b/59cb6f48Nfcda7a34.jpg",
+                "name": "惠普（HP）小欧 270-p020 商用办公台式电脑整机（奔腾G4400 4G 500G 无线网卡 光驱 三年上门）19.5英寸",
+                "wserve": "5年质保",
+                "skuId": "3861071",
+                "num": 5,
+                "url":"http://item.jd.com/3861071.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "6",
+                "picUrl":"jfs/t12433/349/913275582/121949/52fcc095/5a166df4N24bf5d52.jpg",
+                "name": "惠普（HP）M1216nfh 多功能四合一黑白激光一体机 （打印 复印 扫描 传真）",
+                "wserve": "6年质保",
+                "skuId": "280217",
+                "num": 6,
+                "url":"http://item.jd.com/280217.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "7",
+                "picUrl":"jfs/t2851/333/2549126289/70551/cea8de91/576b575cN2ac8d19d.jpg",
+                "name": "惠普（HP）LaserJet Pro P1108黑白激光打印机 A4打印  小型商用打印",
+                "wserve": "7年质保",
+                "skuId": "536830",
+                "num": 7,
+                "url":"http://item.jd.com/536830.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "8",
+                "picUrl":"jfs/t3223/324/3031249840/263472/570450e5/57ea62a9Ne74c02b6.jpg",
+                "name": "爱普生（EPSON）LQ-630KII 针式打印机 LQ-630K升级版 针式打印机（82列）",
+                "wserve": "8年质保",
+                "skuId": "3202012",
+                "num": 8,
+                "url":"http://item.jd.com/3202012.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "9",
+                "picUrl":"jfs/t5290/364/1748821025/48820/fbcbe267/59141b81N988a872d.jpg",
+                "name": "长虹 (CHANGHONG) 1匹 壁挂式冷暖除湿定速空调 KFR-25GW/DHIK(W3-M)+1",
+                "wserve": "9年质保",
+                "skuId": "4113343",
+                "num": 9,
+                "url":"http://item.jd.com/4113343.html",
+                "unitPrice":1.11
+            },
+            {
+                "scene": "10",
+                "picUrl":"jfs/t13618/162/2591829648/420038/9a420c34/5a960edfNb0c0f39e.jpg",
+                "name": "三星（SAMSUNG）DC55E 55英寸壁挂广告机 会议楼宇监控显示器",
+                "wserve": "10年质保",
+                "skuId": "6652413",
+                "num": 10,
+                "url":"http://item.jd.com/6652413.html",
+                "unitPrice":1.11
+            }
+        ],
+        "totalAmount": 50,
+        "totalNum": 10
+        
+    },
+    "resultCode": "0000",
+    "resultMessage": "成功",
+    "success": true
+}

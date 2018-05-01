@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="http://storage.jd.com/scbjavascript/swiper.min.css" />
+	</head>
+
+	<body>
+		<div class="shop_window_content">
+			<!--搜索-->
+			<!--<div class="search_bar">
+		        <a class="search_icon_1" href="#">
+		            <img src="images/search-icon-1.png" alt="">
+		        </a>
+		        <div class="search_bar_warp">
+		            <div class="search_icon_2"></div>
+		            <div class="search_bar_content">
+		                <form>
+		                    <input type="search" placeholder="笔记本">
+		                </form>
+		            </div>
+		        </div>
+		    </div>-->
+			<!--图片轮播-->
+			<div class="move_banner">
+				<div class="swiper-container move-swiper-container-banner">
+					<div class="swiper-wrapper">
+
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<!--锚点导航-->
+			<div class="wrapper wrapper_scenes" id="wrapper_scenes">
+				<div class="scroller scroller_scenes">
+					<ul class="clearfix">
+
+					</ul>
+				</div>
+			</div>
+			<!--商务办公-->
+
+			<div class="floor">
+
+			</div>
+
+			<!--VR按钮-->
+			<a href="plugin/business-office/index.html" class="VR_bottom"></a>
+			<!--采购清单按钮-->
+			<div class="shop_menu"></div>
+			<!--采购清单-->
+			<div class="shopping_cart">
+				<div class="shop_menu_hide"></div>
+				<div class="shopping_cart_content">
+					<div class="shopping_cart_header">
+						<span class="shopping_cart_header_tit">采购清单</span>
+						<div class="shopping_cart_tab">
+							<span class="shopping_cart_tab_active" data-select="0">场景</span>
+							<span data-select="1">综合</span>
+						</div>
+					</div>
+					<div class="shopping_cart_scenes">
+						<ul class="clearfix">
+
+						</ul>
+					</div>
+
+					<div class="shopping_cart_main">
+
+					</div>
+
+					<div class="payment-bar">
+						<div class="shop-total">总价：<span class="total">￥</span><span class="total" id="AllTotal">0.00</span>
+							<div class="all-num">(共<span class="shop-allnum">0</span>件)</div>
+						</div>
+						<a href="javascript:void(0)" class="settlement">加入购物车(<span class="shop-allnum">0</span>)</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				! function() {
+					function a() {
+						document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px"
+					}
+					var b = null;
+					window.addEventListener("resize", function() {
+						clearTimeout(b), b = setTimeout(a, 300)
+					}, !1), a()
+				}(window);
+				IndexInit();
+			})
+		</script>
+		<script src="http://storage.jd.com/scbjavascript/swiper.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+
+</html>
