@@ -1,83 +1,158 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title></title>
-    <link type="text/css" rel="stylesheet" href="css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="https://wq.360buyimg.com/c/=/fd/h5/wxsq_dev/gb/css/gb.min_29d63ba5.css,/fd/h5/wxsq_dev/search/css/search.min_2ec32453.css"/>
-    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-    <script src="js/main.js"></script>
-</head>
-<body>
-<script>
-    !function(){function a(){document.documentElement.style.fontSize=document.documentElement.clientWidth/16+"px"}var b=null;window.addEventListener("resize",function(){clearTimeout(b),b=setTimeout(a,300)},!1),a()}(window);
-</script>
-<div class="shop_same_content selpar">
-    <!--搜索-->
-    <div class="search_bar same_search_bar">
-        <span class="search_tit">电脑</span>
-        <div class="search_bar_warp" data-id="0">
-            <div class="search_icon_2"></div>
-            <div class="search_bar_content">
-                <form>
-                    <input type="search" placeholder="笔记本">
-                </form>
-            </div>
-        </div>
-        <div class="search_icon_3"></div>
-    </div>
-    <!--京东筛选-->
-    <div class="search_head" id="searchHead">
-        <div class="" id="searchHeadFixer" style="transition: transform 0.5s ease;">
-            <div id="smartboxBlock" style="display:none;"><div class="search_panel_wrapper" dtab="s-tab" style="display:none;"><div class="search_panel_title"><div class="text">最近搜索</div><div class="title_btn" dtab="s-btn" rd="7092.33.1">清除</div></div><div class="search_panel_con two_row"><ul class="tags" dtab="s-row"></ul></div><div class="search_panel_title"><div class="text">热门搜索</div><div class="title_btn" dtab="c-btn" rd="7092.33.2">换一批</div></div><div class="search_panel_con"><ul class="tags" dtab="s-tag"></ul></div></div><ul class="s_row" dtab="smartWrap" style="display:none;"> </ul></div>
-            <div class="search_head_fixer_folder unfold" id="searchHeadff" style="">
-                <div class="hide" id="keyshop"></div>
-                <div class="search_brand_list hide" id="brandOutBlock"></div>
-                <div class="banner hide" id="topBranner" rd="0-23-2"></div>
-                <div class="hide" id="carBlock"></div>
-            </div>
-            <div class="pro_filter_wrap" id="proFilterWrap">
-                <div class="inner" id="sortBlock">
-                    <div class="pro_filter" id="sortProBlock">
-                        <div class="pro_filter_items" id="barTabs" style="height: 40px;line-height: 40px;padding: 0">
-                            <a href="javascript:" class="item has" dtype="sort" rd="0-24-3" ord="0-24-3" crd="0-24-4" id="sortTab"><span rd="0-24-3">综合<i class="icon_tri" rd="0-24-3"></i></span></a>
-                            <a href="javascript:" class="item" dtype="sale" rd="0-24-9" id="saleTab">销量</a>
-                            <a href="javascript:" class="item" dtype="dside" rd="0-24-10" ord="0-24-10" crd="0-24-11" id="dsideTab"><span rd="0-24-10">服务<i class="icon_tri" rd="0-24-10"></i></span></a>
-                            <a href="javascript:" class="item hide" dtype="shop" rd="0-24-70" id="shopTab">店铺</a>
-                            <a href="javascript:" class="item hide" dtype="article" rd="0-24-25" id="articleTab">京挑细选</a>
-                            <a href="javascript:" class="item btn_sf" id="filterBtn" rd="0-24-52">筛选</a>
-                        </div>
-                        <div class="item_options" id="sortSubBlock">
-                            <ul class="selection radio line_cols_1 hide" id="sortSelList" mark="sort">
-                                <li class="selected" rd="0-24-5" sort-type="default">综合</li>
-                                <li rd="0-24-54" sort-type="winsdate">最新上架</li>
-                                <li rd="0-24-6" sort-type="price_up" mark="1">价格最低</li>
-                                <li rd="0-24-7" sort-type="price_down" mark="2">价格最高</li>
-                                <li rd="0-24-8" sort-type="comment">评价最多</li>
-                            </ul>
-                            <ul class="selection checkbox line_cols_1 hide" id="dsideSelList" mark="dside">   <li data-filter="dSide" rd="0-24-12" ord="0-24-12" crd="0-24-13" class="">京东配送</li>   <li data-filter="rstore" rd="0-24-14" ord="0-24-14" crd="0-24-15" class="">有货优先</li> <li data-filter="cashond" rd="0-24-16" ord="0-24-16" crd="0-24-17" class="">货到付款</li> <li data-filter="gloabal" rd="0-24-18" ord="0-24-18" crd="0-24-19" class="">全球购商品</li> <li data-filter="plus" rd="0-24-71" ord="0-24-71" crd="0-24-72" class="">PLUS专享价</li> <li data-filter="promo" rd="0-24-20" ord="0-24-20" crd="0-24-21" class="">促销商品</li>  <li data-filter="disgloabal" rd="0-24-24" ord="0-24-24" crd="0-24-25" class="">配送全球</li>  </ul>
-                        </div>
-                    </div>
-                    <div class="pro_filter_more" id="barTabMore">
-                        <ul id="barTabs2"><li class="item selected" rd="0-24-64" ord="0-24-63" crd="0-24-64" otype="newitem"><a href="javascript:" rd="0-24-64">新品</a></li><li class="item" rd="0-24-28" ord="0-24-28" crd="0-24-29" dtype="brand" ind="0"><a href="javascript:" rd="0-24-28"><span rd="0-24-28">品牌<i rd="0-24-28"></i></span></a></li><li class="item" rd="0-24-34" ord="0-24-34" crd="0-24-35" dtype="291" ind="1"><a href="javascript:" rd="0-24-34"><span rd="0-24-34">尺寸<i rd="0-24-34"></i></span></a></li><li class="item" rd="0-24-40" ord="0-24-40" crd="0-24-41" dtype="2" ind="2"><a href="javascript:" rd="0-24-40"><span rd="0-24-40">系统<i rd="0-24-40"></i></span></a></li></ul>
-                        <div class="item_options" id="sortSubBlock2"><ul class="selection checkbox line_cols_2 hide" fmark="brand">  <li class="" filter-type="brand" tid="14026" tname="Apple" extid="" cname="Apple" rd="0-24-30" ord="0-24-30" crd="0-24-31">Apple</li>  <li class="" filter-type="brand" tid="8557" tname="华为（HUAWEI）" extid="" cname="华为（HUAWEI）" rd="0-24-30" ord="0-24-30" crd="0-24-31">华为（HUAWEI）</li>  <li class="" filter-type="brand" tid="17440" tname="微软（Microsoft）" extid="" cname="微软（Microsoft）" rd="0-24-30" ord="0-24-30" crd="0-24-31">微软（Microsoft）</li>  <li class="" filter-type="brand" tid="11516" tname="联想（Lenovo）" extid="" cname="联想（Lenovo）" rd="0-24-30" ord="0-24-30" crd="0-24-31">联想（Lenovo）</li>  <li class="" filter-type="brand" tid="15127" tname="三星（SAMSUNG）" extid="" cname="三星（SAMSUNG）" rd="0-24-30" ord="0-24-30" crd="0-24-31">三星（SAMSUNG）</li>  <li class="" filter-type="brand" tid="10618" tname="酷比魔方" extid="" cname="酷比魔方" rd="0-24-30" ord="0-24-30" crd="0-24-31">酷比魔方</li>  <li class="" filter-type="brand" tid="48099" tname="中柏（Jumper）" extid="" cname="中柏（Jumper）" rd="0-24-30" ord="0-24-30" crd="0-24-31">中柏（Jumper）</li>  <li class="" filter-type="brand" tid="8354" tname="宏碁（acer）" extid="" cname="宏碁（acer）" rd="0-24-30" ord="0-24-30" crd="0-24-31">宏碁（acer）</li>  <li class="" filter-type="brand" tid="15539" tname="神舟（HASEE）" extid="" cname="神舟（HASEE）" rd="0-24-30" ord="0-24-30" crd="0-24-31">神舟（HASEE）</li>  <li class="" filter-type="brand" tid="121652" tname="保时捷（PORSCHE DESIGN）" extid="" cname="保时捷（PORSCHE DESIGN）" rd="0-24-30" ord="0-24-30" crd="0-24-31">保时捷（PORSCHE DESIGN）</li>  </ul><ul class="selection checkbox line_cols_2 hide" fmark="291">  <li class="" filter-type="ext" tid="65407" tname="7英寸及以下" extid="291" cname="7英寸及以下" rd="0-24-36" ord="0-24-36" crd="0-24-37">7英寸及以下</li>  <li class="" filter-type="ext" tid="84355" tname="7.1英寸-9英寸" extid="291" cname="7.1英寸-9英寸" rd="0-24-36" ord="0-24-36" crd="0-24-37">7.1英寸-9英寸</li>  <li class="" filter-type="ext" tid="84356" tname="9.1英寸-10英寸" extid="291" cname="9.1英寸-10英寸" rd="0-24-36" ord="0-24-36" crd="0-24-37">9.1英寸-10英寸</li>  <li class="" filter-type="ext" tid="86343" tname="10.1英寸-12英寸" extid="291" cname="10.1英寸-12英寸" rd="0-24-36" ord="0-24-36" crd="0-24-37">10.1英寸-12英寸</li>  <li class="" filter-type="ext" tid="86344" tname="12.1英寸及以上" extid="291" cname="12.1英寸及以上" rd="0-24-36" ord="0-24-36" crd="0-24-37">12.1英寸及以上</li>  </ul><ul class="selection checkbox line_cols_2 hide" fmark="2">  <li class="" filter-type="ext" tid="2888" tname="Android" extid="2" cname="Android" rd="0-24-42" ord="0-24-42" crd="0-24-43">Android</li>  <li class="" filter-type="ext" tid="10853" tname="ios系统" extid="2" cname="ios系统" rd="0-24-42" ord="0-24-42" crd="0-24-43">ios系统</li>  <li class="" filter-type="ext" tid="10854" tname="windows" extid="2" cname="windows" rd="0-24-42" ord="0-24-42" crd="0-24-43">windows</li>  <li class="" filter-type="ext" tid="7" tname="双系统" extid="2" cname="双系统" rd="0-24-42" ord="0-24-42" crd="0-24-43">双系统</li>  </ul></div>
-                    </div>
-                    <div class="btns" id="barSureBtnBlock">
-                        <a href="javascript:" class="btn btn_1" id="barResetBtn">重置</a>
-                        <a href="javascript:" class="btn btn_2" id="barSureBtn">确认</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!--相似商品-->
-    <div class="same_sku_list">
-        <ul class="clearfix">
-            
-            <!--<li>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title></title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="https://wq.360buyimg.com/c/=/fd/h5/wxsq_dev/gb/css/gb.min_29d63ba5.css,/fd/h5/wxsq_dev/search/css/search.min_2ec32453.css" />
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+
+	<body>
+		<script>
+			! function() {
+				function a() {
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + "px"
+				}
+				var b = null;
+				window.addEventListener("resize", function() {
+					clearTimeout(b), b = setTimeout(a, 300)
+				}, !1), a()
+			}(window);
+		</script>
+		<div class="shop_same_content selpar">
+			<!--搜索-->
+			<div class="search_bar same_search_bar">
+				<span class="search_tit">电脑</span>
+				<div class="search_bar_warp" data-id="0">
+					<div class="search_icon_2"></div>
+					<div class="search_bar_content">
+						<form>
+							<input type="search" placeholder="笔记本">
+						</form>
+					</div>
+				</div>
+				<div class="search_icon_3"></div>
+			</div>
+			<!--京东筛选-->
+			<div class="search_head" id="searchHead">
+				<div class="" id="searchHeadFixer" style="transition: transform 0.5s ease;">
+					<div id="smartboxBlock" style="display:none;">
+						<div class="search_panel_wrapper" dtab="s-tab" style="display:none;">
+							<div class="search_panel_title">
+								<div class="text">最近搜索</div>
+								<div class="title_btn" dtab="s-btn" rd="7092.33.1">清除</div>
+							</div>
+							<div class="search_panel_con two_row">
+								<ul class="tags" dtab="s-row"></ul>
+							</div>
+							<div class="search_panel_title">
+								<div class="text">热门搜索</div>
+								<div class="title_btn" dtab="c-btn" rd="7092.33.2">换一批</div>
+							</div>
+							<div class="search_panel_con">
+								<ul class="tags" dtab="s-tag"></ul>
+							</div>
+						</div>
+						<ul class="s_row" dtab="smartWrap" style="display:none;"> </ul>
+					</div>
+					<div class="search_head_fixer_folder unfold" id="searchHeadff" style="">
+						<div class="hide" id="keyshop"></div>
+						<div class="search_brand_list hide" id="brandOutBlock"></div>
+						<div class="banner hide" id="topBranner" rd="0-23-2"></div>
+						<div class="hide" id="carBlock"></div>
+					</div>
+					<div class="pro_filter_wrap" id="proFilterWrap">
+						<div class="inner" id="sortBlock">
+							<div class="pro_filter" id="sortProBlock">
+								<div class="pro_filter_items" id="barTabs" style="height: 40px;line-height: 40px;padding: 0">
+									<a href="javascript:" class="item has" dtype="sort" rd="0-24-3" ord="0-24-3" crd="0-24-4" id="sortTab"><span rd="0-24-3">综合<i class="icon_tri" rd="0-24-3"></i></span></a>
+									<a href="javascript:" class="item" dtype="sale" rd="0-24-9" id="saleTab">销量</a>
+									<a href="javascript:" class="item" dtype="dside" rd="0-24-10" ord="0-24-10" crd="0-24-11" id="dsideTab"><span rd="0-24-10">服务<i class="icon_tri" rd="0-24-10"></i></span></a>
+									<a href="javascript:" class="item hide" dtype="shop" rd="0-24-70" id="shopTab">店铺</a>
+									<a href="javascript:" class="item hide" dtype="article" rd="0-24-25" id="articleTab">京挑细选</a>
+									<a href="javascript:" class="item btn_sf" id="filterBtn" rd="0-24-52">筛选</a>
+								</div>
+								<div class="item_options" id="sortSubBlock">
+									<ul class="selection radio line_cols_1 hide" id="sortSelList" mark="sort">
+										<li class="selected" rd="0-24-5" sort-type="default">综合</li>
+										<li rd="0-24-54" sort-type="winsdate">最新上架</li>
+										<li rd="0-24-6" sort-type="price_up" mark="1">价格最低</li>
+										<li rd="0-24-7" sort-type="price_down" mark="2">价格最高</li>
+										<li rd="0-24-8" sort-type="comment">评价最多</li>
+									</ul>
+									<ul class="selection checkbox line_cols_1 hide" id="dsideSelList" mark="dside">
+										<li data-filter="dSide" rd="0-24-12" ord="0-24-12" crd="0-24-13" class="">京东配送</li>
+										<li data-filter="rstore" rd="0-24-14" ord="0-24-14" crd="0-24-15" class="">有货优先</li>
+										<li data-filter="cashond" rd="0-24-16" ord="0-24-16" crd="0-24-17" class="">货到付款</li>
+										<li data-filter="gloabal" rd="0-24-18" ord="0-24-18" crd="0-24-19" class="">全球购商品</li>
+										<li data-filter="plus" rd="0-24-71" ord="0-24-71" crd="0-24-72" class="">PLUS专享价</li>
+										<li data-filter="promo" rd="0-24-20" ord="0-24-20" crd="0-24-21" class="">促销商品</li>
+										<li data-filter="disgloabal" rd="0-24-24" ord="0-24-24" crd="0-24-25" class="">配送全球</li>
+									</ul>
+								</div>
+							</div>
+							<div class="pro_filter_more" id="barTabMore">
+								<ul id="barTabs2">
+									<li class="item selected" rd="0-24-64" ord="0-24-63" crd="0-24-64" otype="newitem">
+										<a href="javascript:" rd="0-24-64">新品</a>
+									</li>
+									<li class="item" rd="0-24-28" ord="0-24-28" crd="0-24-29" dtype="brand" ind="0">
+										<a href="javascript:" rd="0-24-28"><span rd="0-24-28">品牌<i rd="0-24-28"></i></span></a>
+									</li>
+									<li class="item" rd="0-24-34" ord="0-24-34" crd="0-24-35" dtype="291" ind="1">
+										<a href="javascript:" rd="0-24-34"><span rd="0-24-34">尺寸<i rd="0-24-34"></i></span></a>
+									</li>
+									<li class="item" rd="0-24-40" ord="0-24-40" crd="0-24-41" dtype="2" ind="2">
+										<a href="javascript:" rd="0-24-40"><span rd="0-24-40">系统<i rd="0-24-40"></i></span></a>
+									</li>
+								</ul>
+								<div class="item_options" id="sortSubBlock2">
+									<ul class="selection checkbox line_cols_2 hide" fmark="brand">
+										<li class="" filter-type="brand" tid="14026" tname="Apple" extid="" cname="Apple" rd="0-24-30" ord="0-24-30" crd="0-24-31">Apple</li>
+										<li class="" filter-type="brand" tid="8557" tname="华为（HUAWEI）" extid="" cname="华为（HUAWEI）" rd="0-24-30" ord="0-24-30" crd="0-24-31">华为（HUAWEI）</li>
+										<li class="" filter-type="brand" tid="17440" tname="微软（Microsoft）" extid="" cname="微软（Microsoft）" rd="0-24-30" ord="0-24-30" crd="0-24-31">微软（Microsoft）</li>
+										<li class="" filter-type="brand" tid="11516" tname="联想（Lenovo）" extid="" cname="联想（Lenovo）" rd="0-24-30" ord="0-24-30" crd="0-24-31">联想（Lenovo）</li>
+										<li class="" filter-type="brand" tid="15127" tname="三星（SAMSUNG）" extid="" cname="三星（SAMSUNG）" rd="0-24-30" ord="0-24-30" crd="0-24-31">三星（SAMSUNG）</li>
+										<li class="" filter-type="brand" tid="10618" tname="酷比魔方" extid="" cname="酷比魔方" rd="0-24-30" ord="0-24-30" crd="0-24-31">酷比魔方</li>
+										<li class="" filter-type="brand" tid="48099" tname="中柏（Jumper）" extid="" cname="中柏（Jumper）" rd="0-24-30" ord="0-24-30" crd="0-24-31">中柏（Jumper）</li>
+										<li class="" filter-type="brand" tid="8354" tname="宏碁（acer）" extid="" cname="宏碁（acer）" rd="0-24-30" ord="0-24-30" crd="0-24-31">宏碁（acer）</li>
+										<li class="" filter-type="brand" tid="15539" tname="神舟（HASEE）" extid="" cname="神舟（HASEE）" rd="0-24-30" ord="0-24-30" crd="0-24-31">神舟（HASEE）</li>
+										<li class="" filter-type="brand" tid="121652" tname="保时捷（PORSCHE DESIGN）" extid="" cname="保时捷（PORSCHE DESIGN）" rd="0-24-30" ord="0-24-30" crd="0-24-31">保时捷（PORSCHE DESIGN）</li>
+									</ul>
+									<ul class="selection checkbox line_cols_2 hide" fmark="291">
+										<li class="" filter-type="ext" tid="65407" tname="7英寸及以下" extid="291" cname="7英寸及以下" rd="0-24-36" ord="0-24-36" crd="0-24-37">7英寸及以下</li>
+										<li class="" filter-type="ext" tid="84355" tname="7.1英寸-9英寸" extid="291" cname="7.1英寸-9英寸" rd="0-24-36" ord="0-24-36" crd="0-24-37">7.1英寸-9英寸</li>
+										<li class="" filter-type="ext" tid="84356" tname="9.1英寸-10英寸" extid="291" cname="9.1英寸-10英寸" rd="0-24-36" ord="0-24-36" crd="0-24-37">9.1英寸-10英寸</li>
+										<li class="" filter-type="ext" tid="86343" tname="10.1英寸-12英寸" extid="291" cname="10.1英寸-12英寸" rd="0-24-36" ord="0-24-36" crd="0-24-37">10.1英寸-12英寸</li>
+										<li class="" filter-type="ext" tid="86344" tname="12.1英寸及以上" extid="291" cname="12.1英寸及以上" rd="0-24-36" ord="0-24-36" crd="0-24-37">12.1英寸及以上</li>
+									</ul>
+									<ul class="selection checkbox line_cols_2 hide" fmark="2">
+										<li class="" filter-type="ext" tid="2888" tname="Android" extid="2" cname="Android" rd="0-24-42" ord="0-24-42" crd="0-24-43">Android</li>
+										<li class="" filter-type="ext" tid="10853" tname="ios系统" extid="2" cname="ios系统" rd="0-24-42" ord="0-24-42" crd="0-24-43">ios系统</li>
+										<li class="" filter-type="ext" tid="10854" tname="windows" extid="2" cname="windows" rd="0-24-42" ord="0-24-42" crd="0-24-43">windows</li>
+										<li class="" filter-type="ext" tid="7" tname="双系统" extid="2" cname="双系统" rd="0-24-42" ord="0-24-42" crd="0-24-43">双系统</li>
+									</ul>
+								</div>
+							</div>
+							<div class="btns" id="barSureBtnBlock">
+								<a href="javascript:" class="btn btn_1" id="barResetBtn">重置</a>
+								<a href="javascript:" class="btn btn_2" id="barSureBtn">确认</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--相似商品-->
+			<div class="same_sku_list">
+				<ul class="clearfix">
+
+					<!--<li>
                 <a class="same_sku_li" href="#" target="_blank">
                     <div class="same_sku_img">
                         <img src="images/computer.jpg" alt="">
@@ -89,68 +164,95 @@
                     <div class="p_select" data-select="1"></div>
                 </a>
             </li>-->
-        </ul>
-    </div>
-    <div class="same_add_list">
-        <a class="same_add_list_button" href="javascript:void(0)">一键加入采购清单（<span class="add_num"></span>件）<em></em></a>
-    </div>
+				</ul>
+			</div>
+			<div class="same_add_list">
+				<a class="same_add_list_button" href="javascript:void(0)">一键加入采购清单（<span class="add_num"></span>件）<em></em></a>
+			</div>
 
-    <!--VR按钮-->
-    <a href="plugin/business-office/index.html" class="VR_bottom"></a>
-    <!--采购清单按钮-->
-    <div class="shop_menu"></div>
-    <!--采购清单-->
-    <div class="shopping_cart">
-        <div class="shop_menu_hide"></div>
-        <div class="shopping_cart_content">
-            <div class="shopping_cart_header">
-                <span class="shopping_cart_header_tit">采购清单</span>
-                <div class="shopping_cart_tab">
-                    <span class="shopping_cart_tab_active" data-select="0">场景</span>
-                    <span data-select="1">综合</span>
-                </div>
-            </div>
-            <div class="shopping_cart_scenes">
-                <ul class="clearfix">
-                </ul>
-            </div>
+			<!--VR按钮-->
+			<a href="plugin/business-office/index.html" class="VR_bottom"></a>
+			<!--采购清单按钮-->
+			<div class="shop_menu"></div>
+			<!--采购清单-->
+			<div class="shopping_cart">
+				<div class="shop_menu_hide"></div>
+				<div class="shopping_cart_content">
+					<div class="shopping_cart_header">
+						<span class="shopping_cart_header_tit">采购清单</span>
+						<div class="shopping_cart_tab">
+							<span class="shopping_cart_tab_active" data-select="0">场景</span>
+							<span data-select="1">综合</span>
+						</div>
+					</div>
+					<div class="shopping_cart_scenes">
+						<ul class="clearfix">
+						</ul>
+					</div>
 
-            <div class="shopping_cart_main">
-            
-            </div>
+					<div class="shopping_cart_main">
 
-            <div class="payment-bar">
-                <div class="shop-total">总价：<span class="total">￥</span><span class="total" id="AllTotal">0.00</span>
-                    <div class="all-num">(共<span class="shop-allnum">0</span>件)</div>
-                </div>
-                <a href="#" class="settlement">加入购物车(<span class="shop-allnum">0</span>)</a>
-            </div>
+					</div>
 
-        </div>
-    </div>
+					<div class="payment-bar">
+						<div class="shop-total">总价：<span class="total">￥</span><span class="total" id="AllTotal">0.00</span>
+							<div class="all-num">(共<span class="shop-allnum">0</span>件)</div>
+						</div>
+						<a href="#" class="settlement">加入购物车(<span class="shop-allnum">0</span>)</a>
+					</div>
 
-</div>
-<script type="text/javascript">
-    $(function(){
-    	
-    	fsameAjax();
-    	
-        $(".search_icon_3").click(function(){
-            var searchwrap = $(".search_bar_warp");
-            var showsearch = searchwrap.attr("data-id");
-            if(showsearch==0){
-                searchwrap.removeClass("search_hide_anim");
-                searchwrap.addClass("search_show_anim");
-                searchwrap.attr("data-id","1");
-            }else{
-                searchwrap.removeClass("search_show_anim");
-                searchwrap.addClass("search_hide_anim");
-                searchwrap.attr("data-id","0");
-            }
-        });
+				</div>
+			</div>
 
-        /*加入采购清单*/
-    /*    var addnum=$(".same_sku_list ul li").length;
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				fsameAjax();
+				UserAjax();
+				if(result == 0) {
+					$(".same_add_list>a").html("一键加入采购清单（<span class='add_num'></span>件）<em></em>");
+				} else {
+					$(".same_add_list>a").text("登录查看企业采购单");
+					//  			window.location.href=;
+				}
+				$(".same_add_list_button").on("click", function() {
+					//一键加入采购清单
+					var skuNumJson = {}; //得到商品的sku
+					var sceneid = $(this).parents(".scene_class").attr("data-sceneid"); //得到商品的场景
+					$(this).parents(".scene_class").find(".p_select").each(function() { //循环场景里面的商品
+
+						var curr = $(this).attr("data-select");
+
+						if(curr == 1) {
+							var skuid = $(this).parents(".sku_item_list").attr("data-skuid");
+							var skunum = 1;
+
+							skuNumJson[skuid] = skunum;
+
+						}
+					});
+
+					console.log(sceneid, skuNumJson);
+
+					//      delAjax(sceneid,skuNumJson);
+
+				});
+				$(".search_icon_3").click(function() {
+					var searchwrap = $(".search_bar_warp");
+					var showsearch = searchwrap.attr("data-id");
+					if(showsearch == 0) {
+						searchwrap.removeClass("search_hide_anim");
+						searchwrap.addClass("search_show_anim");
+						searchwrap.attr("data-id", "1");
+					} else {
+						searchwrap.removeClass("search_show_anim");
+						searchwrap.addClass("search_hide_anim");
+						searchwrap.attr("data-id", "0");
+					}
+				});
+
+				/*加入采购清单*/
+				/*    var addnum=$(".same_sku_list ul li").length;
 //      console.log(addnum);
         $(".add_num").html(addnum);
         $(".p_select").click(function(){
@@ -168,8 +270,8 @@
             }
         })*/
 
-    });
+			});
+		</script>
+	</body>
 
-</script>
-</body>
 </html>

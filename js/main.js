@@ -385,20 +385,29 @@ function FillFun(fl) {
 		if(result == 0) {
 			fillprolist += "<div class='sku_title_price'>¥ " + cparr[i].data[j].price + " </div><a href='javascript:void(0)' class='sku_item_button' data-dialog-skuid='" + pro.term + "'></a></div>"
 		} else {
-//			cparr[i][j].p
-			fillprolist += "<div class='sku_title_price'>¥ " + 1.1 + " </div><a href='//plogin.m.jd.com/user/login.action' class='login_button'>查看企业专享价</a></div>"
+			fillprolist += "<div class='sku_title_price'>¥ " + cparr[i][j].p + " </div><a href='//plogin.m.jd.com/user/login.action' class='login_button'>查看企业专享价</a></div>"
 		}
 		fillprolist += ""
 		fillprolist += "<div class='p_select' data-select='1'></div></a></div>"
 	}
 	filllist += fillprolist + "</div></div>";
-
-	filllist += "<div class='add_list'><a class='add_list_button' href='javascript:void(0)'>一键加入采购清单（<span class='add_num'>" + fprolist[i].length + "</span>件）<em></em></a></div>"
-
+	if(result == 0) {
+		filllist += "<div class='add_list'><a class='add_list_button' href='javascript:void(0)'>一键加入采购清单（<span class='add_num'>" + fprolist[i].length + "</span>件）<em></em></a></div>"
+	} else {
+		filllist += "<div class='add_list'><a class='add_list_button' href='#'>登录查看企业采购单</a></div>"
+	}
+	filllist += "<div class='ad_container'>";
+	filllist += "<div class='ad_left'><div class='ad_item ad_item_title'><div class='ad_title'><p>热门推荐</p><p>企业都在买</p></div><div class='ad_btn'><a href='#'>立即抢购</a></div></div><div class='ad_img_wrap ad_item'>";
+	//广告区  左
+	filllist += "<img src='images/feature_img1.jpg' alt='ad_left_pic' />";
+	filllist += "</div></div>";
+	filllist += "<div class='ad_right'><div class='ad_item'><div class='ad_title ad_item_title'><p>惠普电脑专场</p><p>企业价超低折扣</p></div><div class='ad_btn'><a href='#'>立即抢购</a></div></div><div class='ad_img_wrap ad_item'>";
+	//广告区  右
+	filllist += "<img src='images/feature_img2.jpg' alt='ad_left_pic' />";
+	filllist += "</div></div></div>";
 	filllist += "<div class='scene_logo'><ul>"
 	var len = fbrandlist.length;
 	for(var z = 0; z < len; z++) {
-
 		/*楼层品牌添加内容*/
 		var brand = fbrandlist[z];
 		fillbrandlist += "<li><a href='" + brand.url + "'><img class='logo_img' src='" + imgtot + brand.image_path + "' alt=''>"
@@ -664,7 +673,7 @@ function upAjax(sceneids, delarrs, nums) {
 	var datacon = "sceneId=" + sceneids + "&skuIds=" + delarrs + "&num=" + nums;
 	$.ajax({
 		type: "post",
-//		url: "//127.0.0.1:8020/project/a.json",
+		//		url: "//127.0.0.1:8020/project/a.json",
 		url: "http://qycg.jd.com/currentOrder/update",
 		dataType: 'jsonp',
 		data: datacon,
@@ -1078,7 +1087,7 @@ function vrpriceAjax(cpind) {
 	}
 
 	skudata = "skuids=" + skuid;
-//			console.log(skudata);
+	//			console.log(skudata);
 
 	$.ajax({
 		type: "get",
@@ -1086,13 +1095,13 @@ function vrpriceAjax(cpind) {
 		data: skudata,
 		dataType: 'jsonp',
 		success: function(data) {
-			vrpropri = data;//价格赋值
+			vrpropri = data; //价格赋值
 			vrprofill(cpind);
 			cpind++;
 			var len = vrprolist.length;
 			if(cpind < len) {
 				vrpriceAjax(cpind);
-			} 
+			}
 		}
 	});
 }
@@ -1111,8 +1120,8 @@ function vrprofill(cpind) {
 	if(result == 0) {
 		vrprofill += "<div class='VRscenes_sku_title_price'>¥" + vrpropri.data[0].price + "</div></a><a href='javascript:void(0)' class='VRscenes_sku_item_button'>加入采购清单</a>"
 	} else {
-//vrpropri[0].p 企业价格
-		vrprofill += "<div class='VRscenes_sku_title_price'>¥" +1.2 + "</div></a><a href='https://plogin.m.jd.com/user/login.action' class='VRscenes_sku_item_button'>查看企业专享价</a>"//坑
+		//vrpropri[0].p 企业价格
+		vrprofill += "<div class='VRscenes_sku_title_price'>¥" + 1.2 + "</div></a><a href='https://plogin.m.jd.com/user/login.action' class='VRscenes_sku_item_button'>查看企业专享价</a>" //坑
 	}
 
 	vrprofill += "</div></div></div>"
@@ -1132,7 +1141,7 @@ function vrclick(classcli) {
 			vrtermid = vrclalist[i].term;
 		}
 	}
-		$(".VRscenes_sku_wrap .VRscenes_sku_item_list").remove();//清空原来的vr清单
+	$(".VRscenes_sku_wrap .VRscenes_sku_item_list").remove(); //清空原来的vr清单
 
 	vrproAjax(vrtermid);
 	protop();
