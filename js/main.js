@@ -30,8 +30,8 @@ function IndexInit() {
 }
 
 function UserAjax() {
-	/*用户类型，0 是企业，1是京东*/
-	//	$.ajax({
+	/*用户类型，0 是企业，1是非企业*/
+	//	$.ajax({//判断是否是企业用户
 	//		type: "get",
 	//		url: "//qycg.jd.com/public/isEnterpriseUser",
 	//		dataType: "jsonp",
@@ -385,7 +385,8 @@ function FillFun(fl) {
 		if(result == 0) {
 			fillprolist += "<div class='sku_title_price'>¥ " + cparr[i].data[j].price + " </div><a href='javascript:void(0)' class='sku_item_button' data-dialog-skuid='" + pro.term + "'></a></div>"
 		} else {
-			fillprolist += "<div class='sku_title_price'>¥ " + cparr[i][j].p + " </div><a href='#' class='login_button'>登录查看企业专享价</a></div>"
+//			cparr[i][j].p
+			fillprolist += "<div class='sku_title_price'>¥ " + 1.1 + " </div><a href='//plogin.m.jd.com/user/login.action' class='login_button'>查看企业专享价</a></div>"
 		}
 		fillprolist += ""
 		fillprolist += "<div class='p_select' data-select='1'></div></a></div>"
@@ -564,8 +565,8 @@ function shopAjax(index) {
 	/*当前采购单查询ajax*/
 	$.ajax({
 		type: "get",
-		url: "http://127.0.0.1:8020/project/a.json",
-		//			url:"http://juan.jd.com/a.json",
+		//http://qycg.jd.com/currentOrder/list?currentPage=1&pageSize=10
+		url: "//127.0.0.1:8020/project/a.json",
 		//			data:"sceneId=1",
 		dataType: 'json',
 		cache: true,
@@ -663,6 +664,7 @@ function upAjax(sceneids, delarrs, nums) {
 	var datacon = "sceneId=" + sceneids + "&skuIds=" + delarrs + "&num=" + nums;
 	$.ajax({
 		type: "post",
+//		url: "//127.0.0.1:8020/project/a.json",
 		url: "http://qycg.jd.com/currentOrder/update",
 		dataType: 'jsonp',
 		data: datacon,
@@ -1059,8 +1061,6 @@ function vrproAjax(cid) {
 	});
 }
 
-var vrpropri;
-
 function vrpriceAjax(cpind) {
 	//		产品价格
 	var priceurl;
@@ -1068,17 +1068,17 @@ function vrpriceAjax(cpind) {
 	var skuid = "";
 	//		console.log(result);
 	if(result == 0) {
-		skuid = vrprolist[cpind].skuId
-		priceurl = "//ai.jd.com/index_new?app=Search&user=company&action=getCompanyPrice"
+		skuid = vrprolist[cpind].skuId;
+		priceurl = "//ai.jd.com/index_new?app=Search&user=company&action=getCompanyPrice";
 	} else if(result == 1) {
-		skuid = "J_" + vrprolist[cpind].skuId
-		priceurl = "//p.3.cn/prices/mgets?type=1"
+		skuid = "J_" + vrprolist[cpind].skuId;
+		priceurl = "//p.3.cn/prices/mgets?type=1";
 	} else {
 		return;
 	}
 
 	skudata = "skuids=" + skuid;
-	//		console.log(skudata);
+//			console.log(skudata);
 
 	$.ajax({
 		type: "get",
@@ -1086,47 +1086,16 @@ function vrpriceAjax(cpind) {
 		data: skudata,
 		dataType: 'jsonp',
 		success: function(data) {
-			//				vrpropri=data;
-			vrpropri = data;
-			//  			console.log(vrpropri,"vrpropri 价格");
-
+			vrpropri = data;//价格赋值
 			vrprofill(cpind);
 			cpind++;
 			var len = vrprolist.length;
 			if(cpind < len) {
 				vrpriceAjax(cpind);
-			} else {
-				//  				console.log("填充完毕");
-
-			}
+			} 
 		}
 	});
 }
-
-/*	function vrpriceAjax(skuarr,jskuarr){
-//		产品价格
-		var priceurl;
-		var skudata;
-		if (result==0){
-			skudata="skuids="+skuarr;
-			priceurl="http://ai.jd.com/index_new?app=Search&user=company&action=getCompanyPrice"
-		}else{
-			
-			skudata="skuids="+jskuarr;
-			priceurl="http://p.3.cn/prices/mgets?type=1"
-		}
-		$.ajax({
-			type:"get",
-			url:priceurl,
-    		data: skudata,
-    		dataType:'jsonp',
-    		success:function(data){
-				vrpropri=data;
-    			console.log(vrpropri,"vrpropri 价格");
-				vrprofill();
-    		}
-		});
-	}*/
 
 var VRh = 0;
 
@@ -1142,8 +1111,8 @@ function vrprofill(cpind) {
 	if(result == 0) {
 		vrprofill += "<div class='VRscenes_sku_title_price'>¥" + vrpropri.data[0].price + "</div></a><a href='javascript:void(0)' class='VRscenes_sku_item_button'>加入采购清单</a>"
 	} else {
-
-		vrprofill += "<div class='VRscenes_sku_title_price'>¥" + vrpropri[0].p + "</div></a><a href='javascript:void(0)' class='VRscenes_sku_item_button'>加入采购清单</a>"
+//vrpropri[0].p 企业价格
+		vrprofill += "<div class='VRscenes_sku_title_price'>¥" +1.2 + "</div></a><a href='https://plogin.m.jd.com/user/login.action' class='VRscenes_sku_item_button'>查看企业专享价</a>"//坑
 	}
 
 	vrprofill += "</div></div></div>"
@@ -1163,12 +1132,12 @@ function vrclick(classcli) {
 			vrtermid = vrclalist[i].term;
 		}
 	}
-	//	$(".VRscenes_sku_wrap .VRscenes_sku_item_list").remove();
+		$(".VRscenes_sku_wrap .VRscenes_sku_item_list").remove();//清空原来的vr清单
 
 	vrproAjax(vrtermid);
 	protop();
 
-};
+}
 
 function protop() {
 	//vr上拉，下拉菜单

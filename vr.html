@@ -75,12 +75,12 @@
 		}
 		
 		#viewport .VR_xy8 {
-			left: 7%;
+			left: 10%;
 			top: 28%;
 		}
 		
 		#viewport .VR_xy9 {
-			left: 7%;
+			left: 11%;
 			top: 75%;
 		}
 		
@@ -88,9 +88,31 @@
 			left: 56%;
 			top: 32%;
 		}
+		
+		 .scenes_list_back {
+			width: 6.58%;
+			height: 1rem;
+			float: left;
+			border: 1px solid #a0a0a0;
+			background-color: #fff;
+			position: relative;
+			margin-top: 2%;
+			margin-left: 2%;
+			z-index: 5;
+		}
+		
+		 .scenes_list_back img {
+			width: 0.57rem;
+			margin-left: 0.2rem;
+			vertical-align: top;
+			margin-top: 0.2rem;
+		}
 	</style>
 
 	<body>
+		<div class="scenes_list_back">
+			<a href="index.html"><img src="images/VR_scenes_back.png" alt="" /></a>
+		</div>
 		<div id="viewport">
 			<div style="background: url(images/VR.jpg); width: 1300px; height: 751px;position: relative;background-size: 1300px 751px;">
 				<a class="VR_xy VR_xy1" href="plugin/mobile-commerce/index.html" class="hotscenes-list-ico">
@@ -126,7 +148,7 @@
 			</div>
 		</div>
 		<!--VR按钮-->
-		<a href="catering-service/index.html" class="VR_bottom"></a>
+		<a href="plugin/catering-service/index.html" class="VR_bottom"></a>
 		<!--采购清单按钮-->
 		<div class="shop_menu"></div>
 		<!--采购清单-->
