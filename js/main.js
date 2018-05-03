@@ -608,14 +608,15 @@ function shopAjax(index) {
 		type: "get",
 		//http://qycg.jd.com/currentOrder/list?currentPage=1&pageSize=10
 		url: "http://rap2api.taobao.org/app/mock/data/70589",
-		//			data:"sceneId=1",
+//		data: "scene=1",
+//		data: "sceneId="+seneid,
 		dataType: 'json',
 		cache: true,
 		success: function(data) {
 			console.log(data, "采购");
+			console.log(shoparr)
 			shoparr = data.result.orderInfoList;
 			var len = seneid.length;
-			console.log(len)
 			if(seneidnum < len) {
 				shopproFun(seneidnum); //10个场景，加载数据
 				seneidnum++;
@@ -640,9 +641,11 @@ function shopproFun(ind) {
 	var shopcartpush = "";
 	shopcartpush = "<div class='shop-group-item' data-ind='" + dind + "'><ul></ul></div>"
 	$(".shopping_cart_main").append(shopcartpush);
-	var len = shoparr.length;
+	console.log(shoparr)
+	var len = shoparr.length; //shoparr采购单各个场景的商品
 	if(len > 0) {
 		for(var i = 0; i < len; i++) {
+//			console.log(shoparr[i].scene)
 			var sceneprofill = "";
 			sceneprofill += "<li data-sceneid='" + shoparr[i].scene + "'data-sku='" + shoparr[i].skuId + "'><div class='shop-info'><input type='checkbox' class='check goods-check goodsCheck'>"
 			sceneprofill += "<div class='shop-info-img'><a href='" + shoparr[i].url + "'><img src='" + imgtot + shoparr[i].picUrl + "'/></a></div>"
