@@ -580,7 +580,7 @@ function shopAjax(index) {
 		dataType: 'json',
 		cache: true,
 		success: function(data) {
-			console.log(data, "采购");
+			//			console.log(data, "采购");
 			shoparr = data.result.orderInfoList;
 			var len = seneid.length;
 			if(seneidnum < len) {
@@ -590,7 +590,7 @@ function shopAjax(index) {
 			} else {
 				delscroll();
 			}
-
+			defaultCheck();
 		},
 		error: function(data) {
 			console.log("error")
@@ -604,9 +604,8 @@ function shopproFun(ind) {
 	var shopcartpush = "";
 	shopcartpush = "<div class='shop-group-item' data-ind='" + dind + "'><ul></ul></div>"
 	$(".shopping_cart_main").append(shopcartpush);
-
-	if(shoparr.length > 0) {
-		var len = shoparr.length;
+	var len = shoparr.length;
+	if(len > 0) {
 		for(var i = 0; i < len; i++) {
 			var sceneprofill = "";
 			sceneprofill += "<li data-sceneid='" + shoparr[i].scene + "'data-sku='" + shoparr[i].skuId + "'><div class='shop-info'><input type='checkbox' class='check goods-check goodsCheck'>"
@@ -615,11 +614,13 @@ function shopproFun(ind) {
 			sceneprofill += "<div class='shop-brief'>" + shoparr[i].wserve + " 商品编号:" + shoparr[i].skuId + "</div></a>"
 			sceneprofill += "<div class='shop-price'><div class='shop-pices'>￥<span class='price'>" + shoparr[i].unitPrice + "</span></div>"
 			sceneprofill += "<div class='shop-arithmetic'><a href='javascript:;' class='minus'>-</a>"
-			sceneprofill += "<span class='num'>" + shoparr[i].num + "</span><a href='javascript:;' class='plus'>+</a></div>"
+			sceneprofill += "<span class='num' contenteditable min='1'>" + shoparr[i].num + "</span><a href='javascript:;' class='plus'>+</a></div>"
 			sceneprofill += "</div></div><div class='del'>删除</div></div></li>"
-
 			$(".shopping_cart_main .shop-group-item").eq(dind).find("ul").append(sceneprofill);
-
+			//			console.log(shoparr[i].scene)
+			if($(".num").text() == 1) {
+				$(".num").prev().css("color", "#ddd");
+			}
 		}
 
 	} else {
@@ -634,7 +635,16 @@ function shopproFun(ind) {
 
 	$(".shopping_cart_main .shop-group-item:first").show();
 }
-
+//采购清单中编辑数量时的符号的颜色判断
+$(".shopping_cart_main").on("keyup",".num",function(){
+	if($(this).text()<1&&$(this).text()!=""){
+		alert("单件商品数量不能少于一件");
+		$(this).text(1)
+		$(this).prev().css("color", "#ddd");
+	}else{
+		$(this).prev().css("color", "#666");
+	}
+});
 /*清单tab切换*/
 $(".shopping_cart").on("click", ".shopping_cart_scenes ul li", function() {
 	var i = $(this).index();
@@ -740,6 +750,14 @@ $(".shopping_cart_main").on("click", ".minus", function() {
 		console.log(delarr, sceneid, num);
 		upAjax(sceneid, delarr, num);
 	}
+	//清空数量时，赋初值
+	if(isNaN(num)) {
+		num = 1;
+		$(this).parents("li").find(".num").html(1)
+	}
+	if(t.text() == 1) {
+		$(this).css("color", "#ddd");
+	}
 
 	TotalPrice();
 });
@@ -752,9 +770,16 @@ $(".shopping_cart_main").on("click", ".plus", function() {
 	var delarr = $(this).parents("li").attr("data-sku"); //得到商品的sku
 	var sceneid = $(this).parents("li").attr("data-sceneid"); //得到商品的场景
 	var num = $(this).parents("li").find(".num").html(); //得到商品的sku
+	//清空数量时，赋初值
+	if(isNaN(num)) {
+		num = 1;
+		$(this).parents("li").find(".num").html(1)
+	}
 	console.log(delarr, sceneid, num);
 	upAjax(sceneid, delarr, num);
-
+	if(t.text() > 1) {
+		$(this).prevAll(".minus").css("color", "#666");
+	}
 	TotalPrice();
 });
 
@@ -774,8 +799,17 @@ $(".shopping_cart_main").on("click", ".goodsCheck", function() {
 	}
 });
 
+//采购清单中默认选中
+function defaultCheck() {
+	var doc = document.querySelectorAll(".shop-group-item .goods-check");
+	$(doc).prop('checked', true);
+	$(".shopping_cart_main ").find("goods-check").prop('checked', true); //场景内的所有商品按钮也被选中
+	$("#AllCheck").prop('checked', true); //全选按钮被选中
+	TotalPrice();
+}
+
 $(".shopping_cart_main").on("click", ".allCheck", function() {
-	if($(this).prop("checked") == true) { //如果全选按钮被选中
+	if($(this).prop("checked")) { //如果全选按钮被选中
 		$(this).parents(".shop-group-item").find(".goods-check").prop('checked', true); //场景内的所有商品按钮也被选中
 		if($(".shopCheck").length == $(".shopCheck:checked").length) { //如果场景被选中的数量等于所有店铺的数量
 			$("#AllCheck").prop('checked', true); //全选按钮被选中
@@ -1013,7 +1047,6 @@ $(function() {
 			left: "-=100%"
 		}, 800);
 		shopAjax(0);
-
 	});
 
 	$(".shop_menu_hide").click(function() {

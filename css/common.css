@@ -1086,6 +1086,7 @@ input.check:checked {
 	background: #fff;
 	font-size: 0.5rem;
 	float: left;
+	min-width: .9rem;
 }
 
 .item-payment-bar {
