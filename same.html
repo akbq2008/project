@@ -7,8 +7,8 @@
 		<title></title>
 		<link type="text/css" rel="stylesheet" href="css/reset.css" />
 		<link type="text/css" rel="stylesheet" href="css/common.css" />
-		<link rel="stylesheet" href="https://wq.360buyimg.com/c/=/fd/h5/wxsq_dev/gb/css/gb.min_29d63ba5.css,/fd/h5/wxsq_dev/search/css/search.min_2ec32453.css" />
-		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+		<link rel="stylesheet" href="//wq.360buyimg.com/c/=/fd/h5/wxsq_dev/gb/css/gb.min_29d63ba5.css,/fd/h5/wxsq_dev/search/css/search.min_2ec32453.css" />
+		<script src="//code.jquery.com/jquery-1.8.0.min.js"></script>
 		<script src="js/main.js"></script>
 	</head>
 
@@ -218,24 +218,19 @@
 				$(".same_add_list_button").on("click", function() {
 					//一键加入采购清单
 					var skuNumJson = {}; //得到商品的sku
-					var sceneid = $(this).parents(".scene_class").attr("data-sceneid"); //得到商品的场景
-					$(this).parents(".scene_class").find(".p_select").each(function() { //循环场景里面的商品
-
+					var sceneid = $(".search_bar_warp").attr("data-id"); //得到商品的场景
+					$(".same_sku_li").find(".p_select").each(function() { //循环场景里面的商品
 						var curr = $(this).attr("data-select");
-
 						if(curr == 1) {
-							var skuid = $(this).parents(".sku_item_list").attr("data-skuid");
+							var skuid = $(this).parents(".same_sku_li").attr("data-skuid");
 							var skunum = 1;
 
 							skuNumJson[skuid] = skunum;
 
 						}
 					});
-
-					console.log(sceneid, skuNumJson);
-
-					//      delAjax(sceneid,skuNumJson);
-
+					addAjax(sceneid, skuNumJson);
+					//					console.log(sceneid, skuNumJson);
 				});
 				$(".search_icon_3").click(function() {
 					var searchwrap = $(".search_bar_warp");

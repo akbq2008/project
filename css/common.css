@@ -938,7 +938,7 @@ input[type="checkbox"] {
 
 input.check {
 	width: 5.76%;
-	height: 0;
+	height: .8rem;
 	padding-bottom: 5.76%;
 	background: url(../images/shop_info_icon1.jpg) no-repeat center;
 	background-size: 100% 100%;

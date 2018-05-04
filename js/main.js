@@ -1,8 +1,8 @@
 /**
  * Created by A on 2018/1/19.
  */
-var indurl = "http://ai.jd.com/fast" /*ajax地址*/
-var imgtot = "http://m.360buyimg.com/babel/" /*京东图片前缀*/
+var indurl = "//ai.jd.com/fast" /*ajax地址*/
+var imgtot = "//m.360buyimg.com/babel/" /*京东图片前缀*/
 var result; /*用户类型，0 是企业，1是京东*/
 
 var flonum = 0; /*执行楼层元素的次数*/
@@ -167,9 +167,6 @@ function ScrollFun() {
 		$(".scroller_scenes").animate({
 			"left": fnl_l
 		}, 300);
-		//          console.log(scenes_height);
-		//          console.log(brandArr[i]);
-		//          console.log(fns_h);
 	});
 
 	var fl_w = $(".scroller_scenes").width();
@@ -370,10 +367,7 @@ function callback() {
 	cnt++;
 	if(3 == cnt) {
 		//		console.log('楼层素材，楼层商品，价格，品牌ajax都已执行完毕');
-		//			skuAjax();
-
 		ScrollFun();
-
 		selFun();
 		fsamebtnFun();
 	};
@@ -388,7 +382,6 @@ function FillFun(fl) {
 	var fillprolist = "";
 	var fillbrandlist = "";
 	/*楼层元素添加内容*/
-
 	filllist += " <div class='scene_class selpar' id='maodian" + i + "' data-idx='" + i + "' data-sceneid='" + i + "'>";
 	filllist += "<div class='scene_head_title business_head_title'><img src='" + imgtot + flolist[i].image_path_B + "'><span>" + flolist[i].title + "</span></div>";
 	filllist += "<div class='scene_banner business_banner'><img src='" + imgtot + flolist[i].image_path + "'></div>";
@@ -419,11 +412,13 @@ function FillFun(fl) {
 	}
 	filllist += "<div class='ad_container'>";
 	filllist += "<div class='ad_left'><div class='ad_item ad_item_title'><div class='ad_title'><p>热门推荐</p><p>企业都在买</p></div><div class='ad_btn'><a href='#'>立即抢购</a></div></div><div class='ad_img_wrap ad_item'>";
-	//广告区  左
+
+	//广告区  左*******
 	filllist += "<img src='images/feature_img1.jpg' alt='ad_left_pic' />";
 	filllist += "</div></div>";
 	filllist += "<div class='ad_right'><div class='ad_item'><div class='ad_title ad_item_title'><p>惠普电脑专场</p><p>企业价超低折扣</p></div><div class='ad_btn'><a href='#'>立即抢购</a></div></div><div class='ad_img_wrap ad_item'>";
-	//广告区  右
+
+	//广告区  右*******
 	filllist += "<img src='images/feature_img2.jpg' alt='ad_left_pic' />";
 	filllist += "</div></div></div>";
 	filllist += "<div class='scene_logo'><ul>"
@@ -567,7 +562,7 @@ var fsameprice = [];
 function fsameproAjax(skuarr) {
 	$.ajax({
 		type: "get",
-		url: "http://ai.jd.com/index_new?app=Search&user=company&action=getCompanyPrice",
+		url: "//ai.jd.com/index_new?app=Search&user=company&action=getCompanyPrice",
 		data: "skuids=" + skuarr,
 		dataType: 'jsonp',
 		success: function(data) {
@@ -587,7 +582,9 @@ function fsamefillFun() {
 		fillfsame += "<li class='same_sku_li' data-skuid='" + fsamelist[i].skuId + "'><a targer='_blank'  href='" + fsamelist[i].url + "'>"
 		fillfsame += "<div class='same_sku_img'><img src='" + imgtot + fsamelist[i].picUrl + "' alt=''></div>"
 		fillfsame += "<div class='same_sku_title'><div class='same_sku_tit'>" + fsamelist[i].title + "</div>"
-		fillfsame += "<div class='same_sku_price'>¥" + fsameprice[i].price + "</div></div></a>"
+		if(fsameprice[i] != undefined) {
+			fillfsame += "<div class='same_sku_price'>¥" + fsameprice[i].price + "</div></div></a>"
+		}
 		fillfsame += "<div class='p_select curr' data-select='0'></div></li>"
 		$(".same_sku_list ul").append(fillfsame);
 	}
@@ -598,39 +595,6 @@ function fsamefillFun() {
 
 var seneid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var seneidnum = 0; /*场景商品ajax执行次数*/
-/**
- * 当前采购单查询ajax
- * @param {Object} index 场景id
- */
-function shopAjax(index) {
-	var ind = index;
-	$.ajax({
-		type: "get",
-		//http://qycg.jd.com/currentOrder/list?currentPage=1&pageSize=10
-		url: "http://rap2api.taobao.org/app/mock/data/70589",
-//		data: "scene=1",
-//		data: "sceneId="+seneid,
-		dataType: 'json',
-		cache: true,
-		success: function(data) {
-			console.log(data, "采购");
-			console.log(shoparr)
-			shoparr = data.result.orderInfoList;
-			var len = seneid.length;
-			if(seneidnum < len) {
-				shopproFun(seneidnum); //10个场景，加载数据
-				seneidnum++;
-				shopAjax(index);
-			} else {
-				delscroll();
-			}
-			defaultCheck();
-		},
-		error: function(data) {
-			console.log("error")
-		}
-	});
-}
 
 /**
  * 	采购清单页面  
@@ -641,11 +605,11 @@ function shopproFun(ind) {
 	var shopcartpush = "";
 	shopcartpush = "<div class='shop-group-item' data-ind='" + dind + "'><ul></ul></div>"
 	$(".shopping_cart_main").append(shopcartpush);
-	console.log(shoparr)
+	//	console.log(shoparr)
 	var len = shoparr.length; //shoparr采购单各个场景的商品
 	if(len > 0) {
 		for(var i = 0; i < len; i++) {
-//			console.log(shoparr[i].scene)
+			//			console.log(shoparr[i].scene)
 			var sceneprofill = "";
 			sceneprofill += "<li data-sceneid='" + shoparr[i].scene + "'data-sku='" + shoparr[i].skuId + "'><div class='shop-info'><input type='checkbox' class='check goods-check goodsCheck'>"
 			sceneprofill += "<div class='shop-info-img'><a href='" + shoparr[i].url + "'><img src='" + imgtot + shoparr[i].picUrl + "'/></a></div>"
@@ -673,24 +637,6 @@ function shopproFun(ind) {
 
 	$(".shopping_cart_main .shop-group-item:first").show();
 }
-//采购清单中编辑数量时的符号的颜色判断
-$(".shopping_cart_main").on("keyup", ".num", function() {
-	if($(this).text() < 1 && $(this).text() != "") {
-		alert("单件商品数量不能少于一件");
-		$(this).text(1)
-		$(this).prev().css("color", "#ddd");
-	} else {
-		$(this).prev().css("color", "#666");
-	}
-});
-/*清单tab切换*/
-$(".shopping_cart").on("click", ".shopping_cart_scenes ul li", function() {
-	var i = $(this).index();
-	$(".shopping_cart_curr").removeClass("shopping_cart_curr");
-	$(this).addClass("shopping_cart_curr");
-	$('.shop-group-item').eq(i).show().siblings().hide();
-});
-
 var shopcomarr = [];
 /**
  * 采购清单综合ajax
@@ -698,8 +644,7 @@ var shopcomarr = [];
 function shopcomAjax() {
 	$.ajax({
 		type: "get",
-		//			url:"http://juan.jd.com/b.json",
-		url: "http://127.0.0.1:8020/project/b.json",
+		url: "//qycg.jd.com/currentOrder/list",
 		dataType: 'json',
 		cache: true,
 		success: function(data) {
@@ -716,26 +661,56 @@ function shopcomAjax() {
 		}
 	});
 }
+
 /**
- * 更新产品数量接口
- * @param {Object} sceneids  场景id
- * @param {Object} delarrs  要更新的skuIds
- * @param {Object} nums      数量
+ * 采购清单中编辑数量时的符号的颜色判断
  */
-function upAjax(sceneids, delarrs, nums) {
-	var datacon = "sceneId=" + sceneids + "&skuIds=" + delarrs + "&num=" + nums;
+$(".shopping_cart_main").on("keyup", ".num", function() {
+	if($(this).text() < 1 && $(this).text() != "") {
+		alert("单件商品数量不能少于一件");
+		$(this).text(1)
+		$(this).prev().css("color", "#ddd");
+	} else {
+		$(this).prev().css("color", "#666");
+	}
+});
+/**
+ * 清单tab切换
+ */
+$(".shopping_cart").on("click", ".shopping_cart_scenes ul li", function() {
+	var i = $(this).index();
+	$(".shopping_cart_curr").removeClass("shopping_cart_curr");
+	$(this).addClass("shopping_cart_curr");
+	$('.shop-group-item').eq(i).show().siblings().hide();
+});
+
+/**
+ * 当前采购单查询ajax
+ * @param {Object} index 场景id
+ */
+function shopAjax(index) {
+	var ind = index;
 	$.ajax({
-		type: "post",
-		//		url: "//127.0.0.1:8020/project/a.json",
-		url: "http://qycg.jd.com/currentOrder/update",
-		dataType: 'jsonp',
-		data: datacon,
+		type: "get",
+		url: "//qycg.jd.com/currentOrder/list",
+		data: "sceneId=" + seneid,
+		dataType: 'json',
 		cache: true,
 		success: function(data) {
-			console.log(data, "更新成功");
+			console.log(data, "采购");
+			shoparr = data.result.orderInfoList; //原来的
+			var len = seneid.length;
+			if(seneidnum < len) {
+				shopproFun(seneidnum); //10个场景，加载数据
+				seneidnum++;
+				shopAjax(index);
+			} else {
+				delscroll();
+			}
+			defaultCheck();
 		},
 		error: function(data) {
-			console.log("更新失败");
+			console.log("error")
 		}
 	});
 }
@@ -748,8 +723,8 @@ function addAjax(sceneids, skuNumJsons) {
 	var datacon = "sceneId=" + sceneids + "&skuNumJson=" + skuNumJsons;
 	$.ajax({
 		type: "post",
-		url: "http://qycg.jd.com/currentOrder/add",
-		dataType: 'json',
+		url: "//qycg.jd.com/currentOrder/add",
+		dataType: 'jsonp',
 		data: datacon,
 		cache: true,
 		success: function(data) {
@@ -761,7 +736,52 @@ function addAjax(sceneids, skuNumJsons) {
 	});
 }
 /**
- * 一键加入采购清单
+ * 更新产品数量接口
+ * @param {Object} sceneids  场景id
+ * @param {Object} delarrs  要更新的skuIds
+ * @param {Object} nums      数量
+ */
+function upAjax(sceneids, delarrs, nums) {
+	var datacon = "sceneId='" + sceneids + "'&skuIds='" + delarrs + "'&num=" + nums;
+	console.log(datacon)
+	$.ajax({
+		type: "post",
+		url: "//qycg.jd.com/currentOrder/update",
+		dataType: 'jsonp',
+		data: datacon,
+		cache: true,
+		success: function(data) {
+			console.log(data, "更新成功");
+		},
+		error: function(data) {
+			console.log("更新失败");
+		}
+	});
+
+}
+/**
+ * 删除产品接口
+ * @param {Object} sceneids  场景id
+ * @param {Object} delarrs  要删除的商品skuIds
+ */
+function delAjax(sceneids, delarrs) {
+	var datacon = "sceneId=" + sceneids + "&skuIds=" + delarrs;
+	$.ajax({
+		type: "post",
+		url: "//qycg.jd.com/currentOrder/del",
+		dataType: 'jsonp',
+		data: datacon,
+		cache: true,
+		success: function(data) {
+			console.log("删除成功");
+		},
+		error: function(data) {
+			console.log("error")
+		}
+	});
+}
+/**
+ * 首页一键加入采购清单
  */
 $(".floor").on("click", ".add_list_button", function() {
 	var skuNumJson = {}; //得到商品的sku
@@ -778,37 +798,12 @@ $(".floor").on("click", ".add_list_button", function() {
 
 		}
 	});
-
+	addAjax(sceneid, skuNumJson);
 	console.log(sceneid, skuNumJson);
-
 	//      delAjax(sceneid,skuNumJson);
 
 });
-/**
- * 数量减
- */
-$(".shopping_cart_main").on("click", ".minus", function() {
-	var t = $(this).parent().find('.num');
 
-	if(t.text() > 1) {
-		t.text(parseInt(t.text()) - 1);
-		var delarr = $(this).parents("li").attr("data-sku"); //得到商品的sku
-		var sceneid = $(this).parents("li").attr("data-sceneid"); //得到商品的场景
-		var num = $(this).parents("li").find(".num").html(); //得到商品的sku
-		console.log(delarr, sceneid, num);
-		upAjax(sceneid, delarr, num);
-	}
-	//清空数量时，赋初值
-	if(isNaN(num)) {
-		num = 1;
-		$(this).parents("li").find(".num").html(1)
-	}
-	if(t.text() == 1) {
-		$(this).css("color", "#ddd");
-	}
-
-	TotalPrice();
-});
 /**
  * 数量加
  */
@@ -824,11 +819,35 @@ $(".shopping_cart_main").on("click", ".plus", function() {
 		num = 1;
 		$(this).parents("li").find(".num").html(1)
 	}
-	console.log(delarr, sceneid, num);
+	//	console.log(delarr, sceneid, num);
 	upAjax(sceneid, delarr, num);
 	if(t.text() > 1) {
 		$(this).prevAll(".minus").css("color", "#666");
 	}
+	TotalPrice();
+});
+/**
+ * 数量减
+ */
+$(".shopping_cart_main").on("click", ".minus", function() {
+	var t = $(this).parent().find('.num');
+	if(t.text() > 1) {
+		t.text(parseInt(t.text()) - 1);
+		var delarr = $(this).parents("li").attr("data-sku"); //得到商品的sku
+		var sceneid = $(this).parents("li").attr("data-sceneid"); //得到商品的场景
+		var num = $(this).parents("li").find(".num").html(); //得到商品的sku
+		console.log(delarr, sceneid, num);
+		//		upAjax(sceneid, delarr, num);
+	}
+	//清空数量时，赋初值
+	if(isNaN(num)) {
+		num = 1;
+		$(this).parents("li").find(".num").html(1)
+	}
+	if(t.text() == 1) {
+		$(this).css("color", "#ddd");
+	}
+
 	TotalPrice();
 });
 /**
@@ -857,6 +876,12 @@ function defaultCheck() {
 	$(".shopping_cart_main ").find("goods-check").prop('checked', true); //场景内的所有商品按钮也被选中
 	$("#AllCheck").prop('checked', true); //全选按钮被选中
 	TotalPrice();
+}
+
+function alldefaultCheck() {
+	var doc = document.querySelectorAll(".shopping_cart_main .shop-group-item ul li");
+	console.log(doc.length)
+	$(doc).prop('checked', true);
 }
 /**
  * 采购单全选判断
@@ -918,27 +943,7 @@ function TotalPrice() {
 	$("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
 	$(".shop-allnum").text(allnum); //输出全部数量
 }
-/**
- * 删除产品接口
- * @param {Object} sceneids  场景id
- * @param {Object} delarrs  要删除的商品skuIds
- */
-function delAjax(sceneids, delarrs) {
-	var datacon = "sceneId=" + sceneids + "&skuIds=" + delarrs;
-	$.ajax({
-		type: "post",
-		url: "http://qycg.jd.com/currentOrder/del",
-		dataType: 'jsonp',
-		data: datacon,
-		cache: true,
-		success: function(data) {
-			console.log("删除成功");
-		},
-		error: function(data) {
-			console.log("error")
-		}
-	});
-}
+
 /**
  * 删除选中按钮
  */
@@ -1087,7 +1092,6 @@ $(function() {
 			shopAjax(0);
 
 		} else {
-
 			$(".shopping_cart_scenes").hide();
 			$(".shopPrice").hide();
 			shopcomAjax();
@@ -1135,7 +1139,7 @@ function vrclaAjax(cid) {
 		success: function(data) {
 			var tdata = data.DATA[cid];
 			vrclalist = tdata;
-			console.log(vrclalist, "vrclalist 类目");
+			//			console.log(vrclalist, "vrclalist 类目");
 		}
 	});
 
@@ -1225,9 +1229,10 @@ function vrprofill(cpind) {
 	}
 
 	vrprofill += "</div></div></div>"
-
+	/**
+	 * vr场景中的加入采购清单
+	 */
 	$(".VRscenes_sku_wrap").append(vrprofill);
-
 }
 /**
  * vr中点击时，显示相识产品
@@ -1243,12 +1248,23 @@ function vrclick(classcli) {
 			vrtermid = vrclalist[i].term;
 		}
 	}
+
 	$(".VRscenes_sku_wrap .VRscenes_sku_item_list").remove(); //清空原来的vr清单
 
 	vrproAjax(vrtermid);
 	protop();
 
 }
+/**
+ * vr场景中点击加入采购清单中
+ */
+$(document).on("click", ".VRscenes_sku_item_button", function(event) {
+	var skuNumJson = {}; //得到商品的sku
+	var sceneid = $(this).parents(".VRscenes_sku_slide").attr("data-id"); //得到商品的场景
+	var skuid = $(this).parents(".VRscenes_sku_item_list").attr("data-sku");
+	addAjax(sceneid, skuid);
+	console.log(sceneid, skuid);
+});
 /**
  * vr上拉，下拉菜单
  */
